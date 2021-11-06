@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import {Route, Link, Switch} from 'react-router-dom'
+
 import Home from '../Home/Home';
-import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import Currencies from '../Currencies/Currencies';
 import Currency from '../Currency/Currency';

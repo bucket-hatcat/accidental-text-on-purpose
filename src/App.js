@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import './Components/Home';
+import ReactBootstrap, {Navbar, Container, Nav} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './Components/Home';
+import { LinkContainer } from 'react-router-bootstrap';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Navbar bg="dark" variant="dark">
+      <Navbar fixed="top" bg="dark" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Navbar.Brand>Navbar</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
+      <LinkContainer to="/Home"> <Nav.Link>Home</Nav.Link></LinkContainer>
       <Nav.Link href="#features">Features</Nav.Link>
       <Nav.Link href="#pricing">Pricing</Nav.Link>
     </Nav>
@@ -22,5 +27,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

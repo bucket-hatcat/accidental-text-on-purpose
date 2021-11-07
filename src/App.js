@@ -1,29 +1,40 @@
-import React, { useState } from 'react';
-import {Route, Link, Switch, Redirect} from 'react-router-dom'
-import './App.css';
-import './Components/Home';
-import ReactBootstrap, {Navbar, Container, Nav} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './Components/Home';
-import { LinkContainer } from 'react-router-bootstrap';
-
+import React, { useState } from "react";
+import {Link, Switch, Redirect } from "react-router-dom";
+import "./App.css";
+import "./Components/Home";
+import { Route, Switch } from "react-router";
+import ReactBootstrap, { Navbar, Container, Nav } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./Components/Home";
+import { LinkContainer } from "react-router-bootstrap";
+import {Switch} from 'react-router-native'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <Navbar fixed="top" bg="dark" variant="dark">
-    <Container>
-    <Navbar.Brand>Navbar</Navbar.Brand>
-    <Nav className="me-auto">
-      <LinkContainer to="/Home"> <Nav.Link>Home</Nav.Link></LinkContainer>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-  <br />
-      </header>
+    <div>
+      <nav>
+        <Link to="/">
+          <img
+            src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"
+            alt=""
+          />
+          <h1>Bitcoin prices</h1>
+        </Link>
+        <Link to="/currencies">Currency List</Link>
+      </nav>
+      <main>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/currencies" component={Currencies} />
+          <Route
+            path="/price/:currency"
+            render={(routerProps) => (
+              <Price handleClick={handleClick} {...routerProps} price={price} />
+            )}
+          />
+          )
+        </Switch>
+      </main>
     </div>
   );
 }

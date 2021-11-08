@@ -1,39 +1,74 @@
-import React, {useState, useEffect} from 'react';
-import './App.css';
+import React, { useState, useEffect, submitForm } from "react";
+import { useNavigate } from "react-router";
+import "./App.css";
+import Home from "./Components/home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Container, Nav, NavDropdown } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
 
 function App() {
-
-  const [advice, setadvice] = useState("");
+  const [advice, setAdvice] = useState("");
   // https://api.adviceslip.com/advice
 
   useEffect(() => {
     fetch("https://api.adviceslip.com/advice")
-      .then(res => res.json())
-      .then(
-        (advice) => {
-          setadvice(advice.content);  
+      .then((res) => res.json())
+      .then((advice) => {
+        setAdvice(advice.slip.advice);
+        // console.log("LOAD ADVICE", advice);
+      });
+  }, []);
 
-        }
-      )
-  },[]);
+  let fetchNewAdvice = () => {
+    fetch("https://api.adviceslip.com/advice")
+      .then((res) => res.json())
+      .then((advice) => {
+        setAdvice(advice.slip.advice);
+        // console.log("BUTTON ADVICE", advice)
+      });
+  };
 
-  let fetchNewadvice = () => {
-    fetch("http://api.quotable.io/random")
-      .then(res => res.json())
-      .then(
-        (advice) => {
-          setadvice(advice.content);  
+  let navigate = useNavigate();
+  let [error, setError] = React.useState(null);
 
-        }
-      )
+  async function handleSubmit(event) {
+    event.preventDefault();
+    let result = await submitForm(event.target);
+    if (result.error) {
+      setError(result.error);
+    } else {
+      navigate("success");
+    }
   }
+
   return (
     <div className="App">
-         <div className="advice">
-            <h2>{advice}</h2>
-
-         </div><br />
-         <button className="btn" onClick={fetchNewadvice}>Generate New advice</button>
+      <Navbar collapseOnSelect expand="md">
+<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+<Navbar.Collapse id="responsive-navbar-nav">
+   <Nav className="justify-content-center" style={{ flex: 1}}>
+     <Nav.Item>
+        <Nav.Link href="/home">Home</Nav.Link>
+     </Nav.Item>
+     <Nav.Item>
+        <Nav.Link href="/home">Collection</Nav.Link>
+     </Nav.Item>
+     <Nav.Item>
+        <Nav.Link href="/home">Contact</Nav.Link>
+     </Nav.Item>
+     <Nav.Item>
+        <Nav.Link href="/home">Blog</Nav.Link>
+     </Nav.Item>
+   </Nav>
+</Navbar.Collapse>
+</Navbar>
+      <div className="advice">
+        <h2>{advice}</h2>
+      </div>
+      <br />
+      <button className="btn" onClick={fetchNewAdvice}>
+        Generate New advice
+      </button>
     </div>
   );
 }

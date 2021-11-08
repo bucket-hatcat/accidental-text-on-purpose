@@ -1,10 +1,11 @@
 import React  from "react";
+import {Navbar, Container, Nav, NavDropdown, Row, Button, Col} from 'react-bootstrap';
+
 
 function Home() {
   return (
     <div>
-      <h1>Home</h1>
-      <p>Where something might show up</p>
+
     </div>
   );
 }

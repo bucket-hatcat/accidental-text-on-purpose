@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lobster&display=swap');
 
 .App {
     display: flex;
     justify-content: center;
-    min-height: 100vh;
     align-items: center;
     flex-direction: column;
 }
 .advice {
-    background: url(./assets/bg.jpg);
     background-size: cover;
     width: 450px;
     height: 320px;
@@ -21,11 +18,9 @@
 }
 .advice h2 {
     font-size: 2em;
-    font-family: 'Lobster', cursive;
 }
 .advice small {
     font-size: 1.5em;
-    font-family: 'Dancing Script', cursive;
 }
 .btn {
 	display: block;
@@ -43,4 +38,13 @@
 	background: #008CBA;
 	color: #fff;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.navbar {
+    width: 100%;
+background-color: rgb(237, 13, 13);
+text-align: center;
+
+}
+.navbar.brand {
+    text-align: center;
 }

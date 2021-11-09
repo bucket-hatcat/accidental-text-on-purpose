@@ -1,13 +1,10 @@
-import React  from "react";
-import {Navbar, Container, Nav, NavDropdown, Row, Button, Col} from 'react-bootstrap';
-
-
-function Home() {
+const Home = () => {
   return (
-    <div>
-
-    </div>
+  <div>
+      <h1>Home Page</h1>
+  </div>
+  
   );
-}
-
-export default Home;
+  
+  }
+  export default Home;

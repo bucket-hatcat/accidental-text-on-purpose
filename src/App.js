@@ -1,8 +1,9 @@
 import React, { useState, useEffect, submitForm } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, } from "react-router";
 import "./App.css";
-import Home from "./Components/home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Container, Nav, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -44,24 +45,24 @@ function App() {
   return (
     <div className="App">
       <Navbar collapseOnSelect expand="md">
+  
 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 <Navbar.Collapse id="responsive-navbar-nav">
-   <Nav className="justify-content-center" style={{ flex: 1}}>
-     <Nav.Item>
-        <Nav.Link href="/home">Home</Nav.Link>
-     </Nav.Item>
-     <Nav.Item>
-        <Nav.Link href="/home">Collection</Nav.Link>
-     </Nav.Item>
-     <Nav.Item>
-        <Nav.Link href="/home">Contact</Nav.Link>
-     </Nav.Item>
-     <Nav.Item>
-        <Nav.Link href="/home">Blog</Nav.Link>
-     </Nav.Item>
-   </Nav>
+   <nav>
+        <Link to='/homepage'>iStocks</Link>
+        <Link to='/Stocks'>Stocks</Link>
+        <Link to='/About'>About</Link>
+</nav>
+
+  <Routes>
+        <Route path='/homepage' exact component={Home}/>
+        <Route path='/About' exact component={About}/>
+</Routes>
+
 </Navbar.Collapse>
 </Navbar>
+      
+      
       <div className="advice">
         <h2>{advice}</h2>
       </div>

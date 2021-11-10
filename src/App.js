@@ -1,11 +1,9 @@
 import React, { useState, useEffect, submitForm } from "react";
-import { useNavigate, } from "react-router";
+import { useNavigate, Router } from "react-router";
 import "./App.css";
-import Home from "./Home";
-import About from "./About";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Container, Nav, NavDropdown } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
+import {Nav, Navbar, Container } from "react-bootstrap";
+import {LinkContainer} from 'react-router-bootstrap'
+
 
 function App() {
   const [advice, setAdvice] = useState("");
@@ -32,36 +30,43 @@ function App() {
   let navigate = useNavigate();
   let [error, setError] = React.useState(null);
 
-  async function handleSubmit(event) {
+  const header = () => {
+    return (
+
+function handleSubmit(event) {
     event.preventDefault();
-    let result = await submitForm(event.target);
+    let result = submitForm(event.target);
     if (result.error) {
       setError(result.error);
     } else {
       navigate("success");
     }
-  }
+  })
 
   return (
     <div className="App">
-      <Navbar collapseOnSelect expand="md">
-  
-<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-<Navbar.Collapse id="responsive-navbar-nav">
-   <nav>
-        <Link to='/homepage'>iStocks</Link>
-        <Link to='/Stocks'>Stocks</Link>
-        <Link to='/About'>About</Link>
-</nav>
-
-  <Routes>
-        <Route path='/homepage' exact component={Home}/>
-        <Route path='/About' exact component={About}/>
-</Routes>
-
-</Navbar.Collapse>
+    
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <LinkContainer>
+  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="me-auto">
+      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    </Nav>
+    <Nav>
+      <Nav.Link href="#deets">More deets</Nav.Link>
+      <Nav.Link eventKey={2} href="#memes">
+        Dank memes
+      </Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+  </LinkContainer>
 </Navbar>
-      
+
+
+
       
       <div className="advice">
         <h2>{advice}</h2>
@@ -72,6 +77,6 @@ function App() {
       </button>
     </div>
   );
-}
+}}
 
 export default App;

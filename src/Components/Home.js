@@ -1,7 +1,11 @@
-const Home = () => {
+import * as React from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import Header from "./Header";
+
+function Home () {
   return (
   <div>
-      <h1>Home Page</h1>
+      <Header />
   </div>
   
   );

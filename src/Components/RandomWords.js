@@ -1,6 +1,5 @@
-import React  from "react";
-import {Navbar, Container, Nav, NavDropdown, Row, Button, Col} from 'react-bootstrap';
-
+import * as React from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 function RandomWords() {
   return (

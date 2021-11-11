@@ -1,3 +1,6 @@
+import * as React from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+
 function TextMessage() {
     return (
       <div>
@@ -6,4 +9,4 @@ function TextMessage() {
     );
   }
   
-  export default TextMessage
+  export default TextMessage;

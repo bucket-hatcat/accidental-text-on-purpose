@@ -1,43 +1,24 @@
-import React, { useState, useEffect, submitForm } from "react";
-import Navbar from "./Components/Header.js";
-import "./App.css";
+import * as React from "react";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 import About from "./Components/About";
-import { render } from "@testing-library/react";
-// import {LinkContainer} from 'react-router-bootstrap'
+import Home from "./Components/Home";
+import RandomWords from "./Components/RandomWords";
+import NoMatch from "./Components/NoMatch";
+import Header from './Components/Header';
+
 function App() {
-  const [advice, setAdvice] = useState("");
-  // https://api.adviceslip.com/advice
-  useEffect(() => {
-    fetch("https://api.adviceslip.com/advice")
-      .then((res) => res.json())
-      .then((advice) => {
-        setAdvice(advice.slip.advice);
-        // console.log("LOAD ADVICE", advice);
-      });
-  }, []);
-  let fetchNewAdvice = () => {
-    fetch("https://api.adviceslip.com/advice")
-      .then((res) => res.json())
-      .then((advice) => {
-        setAdvice(advice.slip.advice);
-        // console.log("BUTTON ADVICE", advice)
-      });
-  };
-  
-  return (
-    <div className="App">
-<Navbar />
-</div>
-
-
-    //   <div className="advice">
-    //     <h2>{advice}</h2>
-    //   </div>
-    //   <br />
-    //   <button className="btn" onClick={fetchNewAdvice}>
-    //     Generate New advice
-    //   </button>
-    // </div>
-  );
+return (
+<div>
+      <h1>Basic Example</h1>
+<Header />
+<Routes>
+      <Route path="/" element={<App />}>
+        <Route index element={<Home />} />
+        <Route path="About" element={<About />} />
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
+    </div>
+)
 }
 export default App;

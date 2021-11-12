@@ -22,12 +22,8 @@ function Advice() {
     };
     
     return (
-      <div className="App">
-      
-      <div className="About">
   
-  
-      </div>
+<div>
         <div className="advice">
           <h2>{Advice}</h2>
         </div>
@@ -38,4 +34,4 @@ function Advice() {
       </div>
     );
   }
-  export default Advice;
+  export default {Advice};

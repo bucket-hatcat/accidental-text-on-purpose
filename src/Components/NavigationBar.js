@@ -1,8 +1,10 @@
 import About from "./About";
 import Home from "./Home";
+import { BrowserRouter } from "react-router-dom";
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+
 
 function NavigationBar() {
   return (
@@ -10,7 +12,7 @@ function NavigationBar() {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-    <LinkContainer to="/">
+    <LinkContainer to="/NavigationBar">
     <Nav.Link>Home</Nav.Link>
     </LinkContainer>
     <LinkContainer to="/about">
@@ -23,6 +25,5 @@ function NavigationBar() {
     </Navbar.Collapse>
     </Navbar>
     )
-  
-}
- export default NavigationBar;
+};
+  export default {NavigationBar};

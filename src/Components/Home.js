@@ -1,11 +1,12 @@
-import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
-import Header from "./Header";
+import React from "react";
+import Header from "./NavigationBar";
+import Advice from "./Advice";
 
 function Home () {
   return (
   <div>
       <Header />
+      <Advice />
   </div>
   
   );

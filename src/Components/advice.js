@@ -2,7 +2,7 @@ import React, { useState, useEffect, submitForm } from "react";
 
 
 function Advice() {
-    const [advice, setAdvice] = useState("");
+    const [Advice, setAdvice] = useState("");
     // https://api.adviceslip.com/advice
     useEffect(() => {
       fetch("https://api.adviceslip.com/advice")
@@ -29,7 +29,7 @@ function Advice() {
   
       </div>
         <div className="advice">
-          <h2>{advice}</h2>
+          <h2>{Advice}</h2>
         </div>
         <br />
         <button className="btn" onClick={fetchNewAdvice}>

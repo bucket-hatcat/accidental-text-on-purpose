@@ -1,5 +1,4 @@
-import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import React from "react";
 
 function TextMessage() {
     return (

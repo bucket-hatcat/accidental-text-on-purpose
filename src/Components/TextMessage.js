@@ -1,6 +1,6 @@
 import React, {useState, props, onHide} from "react";
 import Modal from "react-bootstrap/Modal";
-import {Button, render} from "react-bootstrap";
+import {render} from "react-bootstrap";
 import styles from "../App.css";
 
 
@@ -14,27 +14,18 @@ function TextMessage() {
 
  return (
     <>
- <style type="text/css">
-    {`
-    .btn-flat {
-      background-color: black;
-      color: white;
-display: flex;
-position: center;
-
-    `}
-  </style>
-      <Button variant="flat" onClick={handleShow}>
-      Use in a sentence
-      </Button>
+ 
+      <button onClick={handleShow}>
+      example
+      </button>
       <Modal size="lg" aria-labelledby="contained-modal-title-vcenter"
       centered show={show} onHide={handleClose} animation={false}>
         <Modal.Body >
         <div position="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/o2Wtvvc-Hls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <button onClick={handleClose}>
             Close
-          </Button>
+          </button>
         </Modal.Footer>
       </Modal>
     </>

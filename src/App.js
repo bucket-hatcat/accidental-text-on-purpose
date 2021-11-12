@@ -1,5 +1,4 @@
 import React from "react";
-import About from "./Components/About";
 import Home from "./Components/Home";
 import "react-bootstrap/dist/react-bootstrap.min.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -14,9 +13,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
-        </Route>
-        <Route exact path="/About">
-          <About />
         </Route>
         <Route exact path="/Advice">
           <Advice />

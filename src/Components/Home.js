@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./NavigationBar";
+import Header from "./Header";
 import Advice from "./Advice";
 
 function Home () {

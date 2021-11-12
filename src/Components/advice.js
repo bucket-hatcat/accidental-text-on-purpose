@@ -34,4 +34,4 @@ function Advice() {
       </div>
     );
   }
-  export default {Advice};
+  export default Advice;

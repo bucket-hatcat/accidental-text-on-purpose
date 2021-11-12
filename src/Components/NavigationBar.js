@@ -26,4 +26,4 @@ function NavigationBar() {
     </Navbar>
     )
 };
-  export default {NavigationBar};
+  export default NavigationBar;

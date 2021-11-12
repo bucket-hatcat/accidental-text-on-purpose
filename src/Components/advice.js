@@ -1,4 +1,4 @@
-import React, { useState, useEffect, submitForm } from "react";
+import React, { useState, useEffect, submitForm, Button } from "react";
 
 
 function Advice() {
@@ -22,14 +22,24 @@ function Advice() {
     };
     
     return (
-  
+
 <div>
+   <style type="text/css">
+    {`
+    .flat {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content:center;
+    }
+    `}
+    </style>
         <div className="advice">
           <h2>{Advice}</h2>
         </div>
         <br />
-        <button className="btn" onClick={fetchNewAdvice}>
-          Generate New advice
+        <button className="flat" onClick={fetchNewAdvice}>
+          Get Text
         </button>
       </div>
     );

@@ -1,18 +1,28 @@
-import React, {Component} from "react";
+import React from "react";
 import About from "./Components/About";
 import Home from "./Components/Home";
-import Advice from "./Components/Advice";
-import 'react-bootstrap/dist/react-bootstrap.min.js';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Routes } from "react-router";
+import "react-bootstrap/dist/react-bootstrap.min.js";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Components/Header";
-  
-  function App() {
+import Advice from "./Components/Advice";
+import './App.css';
+
+function App() {
   return (
-  <div className="App">
-<Header />
-<Advice />
-  </div>
+    <div className="App">
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/About">
+          <About />
+        </Route>
+        <Route exact path="/Advice">
+          <Advice />
+        </Route>
+      </Switch>
+    </div>
   );
-  }
+}
 export default App;

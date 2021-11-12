@@ -16,35 +16,11 @@
     align-items: center;
     flex-direction: column;
 }
-.advice h2 {
+.h1 {
     font-size: 2em;
-}
-.advice small {
-    font-size: 1.5em;
-}
-.btn {
-	display: block;
-	border: 2px solid #008CBA;
-	background: transparent;
-	padding: 10px 15px;
-	color: #008CBA;
-	font-size: 20px;
-	border-radius: 5px;
-	cursor: pointer;
-	outline: 1px;
-	transition: background 1s, color 1s;
-}
-.btn:hover{
-	background: #008CBA;
-	color: #fff;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-.navbar {
-    width: 100%;
-background-color: rgb(237, 13, 13);
-text-align: center;
 
 }
-.navbar.brand {
-    text-align: center;
+.Header.Navbar {
+    display: flex;
+    width: 100%
 }
